@@ -17,3 +17,14 @@
         }
     }
 
+.add-form {
+
+    &__btn-submit {
+        @include remove-borders;
+        cursor: pointer;
+    }
+    &__btn-cancel {
+        @include remove-borders;
+        cursor: pointer;
+    }
+}
