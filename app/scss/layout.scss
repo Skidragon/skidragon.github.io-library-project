@@ -1,1 +1,23 @@
 @import 'base';
+
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    height: 5rem;
+    width: 100%;
+    padding: 1.3rem 1rem;
+    background: $dark-orange-color;
+
+    & > * {
+        height: 100%;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}
