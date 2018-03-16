@@ -28,3 +28,31 @@
         cursor: pointer;
     }
 }
+
+//===================
+//GENERAL COMPONENTS
+//===================
+
+    .btn--primary {
+        font-weight: bold;
+        color: $white-color;
+        background: $primary-color;
+    }
+    .btn--success {
+        font-weight: bold;
+        color: $white-color;
+        background: $success-color;
+    }
+    .btn--danger {
+        font-weight: bold;
+        color: $white-color;
+        background: $danger-color;
+    }
+
+    .btn {
+        color: $white-color;
+        @include border-radius;
+        @include remove-borders;
+        cursor: pointer;
+        padding: .5rem;
+    }
