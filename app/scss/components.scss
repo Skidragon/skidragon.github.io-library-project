@@ -1,1 +1,19 @@
 @import 'base';
+.main-header {
+    .btn--primary {
+        @include border-radius;
+        @include remove-borders;
+        padding: .5rem;
+        width: 6rem;
+        font-weight: bold;
+        color: $white-color;
+        background: $primary-color;
+    }
+}
+    .book-tile {
+        &__btn-delete {
+            @include transparent-bg;
+            font-size: 2rem;
+        }
+    }
+
