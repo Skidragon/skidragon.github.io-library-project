@@ -1,0 +1,12 @@
+@mixin border-radius($radius: .2rem) {
+    border-radius: $radius;
+}
+@mixin remove-borders {
+    outline: 0;
+    border: 0;
+}
+@mixin transparent-bg {
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
