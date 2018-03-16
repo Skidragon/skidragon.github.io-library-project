@@ -1,1 +1,20 @@
 @import 'base';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+html, 
+body {
+    background: $dark-grey-color;
+
+    height: 100vw;
+    width: 100vw;
+    font: 14px/1.5 sans-serif;
+}
+
+.fa-trash-alt {
+    color: $super-danger-color;
+}
