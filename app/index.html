@@ -30,7 +30,27 @@
             </div>
         </div>
     </section>
-    <script src="main.js"></script>
+
+    <div class="add-form">
+
+        <h2 class="add-form__title">Add Book</h2>
+
+        <!-- Add Title -->
+        <label for="add-title-info">Title</label>
+        <input type="text" placeholder="Add Book Title" id="add-title-info">
+
+        <!-- Add Author -->
+        <label for="add-author-info">Author</label>
+        <input type="text" placeholder="Add Author" id="add-author-info">
+
+        <!-- Number of Pages? -->
+        <label for="add-pages-info">Number of Pages?</label>
+        <input type="number" id="add-pages-info">
+
+        <div class="add-form__btn-container">
+            <button class="btn--success add-form__btn-submit">Submit</button>
+            <button class="btn--danger add-form__btn-cancel">Cancel</button>
+    </div>
 </body>
 
 </html>
