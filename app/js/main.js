@@ -32,12 +32,10 @@ function resetForm() {
             
         }
 function addTile() {
-
     const grid = document.querySelector('.books__grid');
     
     const tile = document.createElement('div');
     const tileClasses = ['book-tile'];
-
     tile.classList.add(...tileClasses);
 
     const book = new Book(titleBox.value, authorBox.value, pagesBox.value, false);
@@ -73,4 +71,27 @@ function addTile() {
 
 addBtn.addEventListener('click', function() {
     addForm.style.display = 'flex';
+    body.style.overflow = 'hidden';
 });
+
+submitBtn.addEventListener('click', function() {
+    addForm.style.display = 'none';
+    body.style.overflow = 'scroll';        
+    addTile()
+});
+
+cancelBtn.addEventListener('click', function() {
+    addForm.style.display = 'none';
+    body.style.overflow = 'scroll';    
+});
+submitBtn.addEventListener('click', function() {
+    addForm.style.display = 'none';
+    body.style.overflow = 'scroll';        
+    addTile()
+});
+
+cancelBtn.addEventListener('click', function() {
+    addForm.style.display = 'none';
+    body.style.overflow = 'scroll';    
+});
+
