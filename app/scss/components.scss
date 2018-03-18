@@ -56,3 +56,10 @@
         cursor: pointer;
         padding: .5rem;
     }
+
+    .btn--circle {
+        @include border-radius(50%);
+        @include remove-borders;
+        min-width: 4rem;
+        min-height: 4rem;
+    }
