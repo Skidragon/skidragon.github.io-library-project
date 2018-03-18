@@ -25,31 +25,12 @@ const addBtn = document.querySelector('.js-btn-add');
 const submitBtn = document.querySelector('.js-btn-submit');
 const cancelBtn = document.querySelector('.js-btn-cancel');
 
-                if (this.getAttribute('class').indexOf('btn--danger') != -1) {
-                    readBtn.textContent = `Read`;
-                    this.classList.remove('btn--danger');
-                    this.classList.add('btn--success');
-                } else {
-                    readBtn.textContent = `Didn't Read`;             
-                    this.classList.add('btn--danger');
-                    this.classList.remove('btn--success');
-                }
-            });
-            return readBtn;
-            
-        },
-
-        //Able to edit the text content
-        createEdit: function () {
-            const editBtn = document.createElement('button');
-            const editClasses = ['btn','book-tile__btn-edit', 'btn--primary'];
-            editBtn.classList.add(...editClasses);
-            editBtn.textContent = `Edit Book`;                    
-            return editBtn;
+function resetForm() {
+    titleBox.value = '';
+    authorBox.value = '';
+    pagesBox.value = '';
             
         }
-    }
-
 function addTile() {
 
     const grid = document.querySelector('.books__grid');
