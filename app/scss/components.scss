@@ -27,6 +27,9 @@
         @include remove-borders;
         cursor: pointer;
     }
+    &__btn--circle {
+        color: black;
+    }
 }
 
 //===================
@@ -42,15 +45,25 @@
         font-weight: bold;
         color: $white-color;
         background: $success-color;
+
+        &-highlight:hover {
+            font-weight: bold;
+            color: $white-color;
+            background: $success-color;
+        }
     }
     .btn--danger {
         font-weight: bold;
         color: $white-color;
         background: $danger-color;
+        &-highlight:hover {
+            font-weight: bold;
+            color: $white-color;
+            background: $danger-color;
+        }
     }
 
     .btn {
-        color: $white-color;
         @include border-radius;
         @include remove-borders;
         cursor: pointer;
