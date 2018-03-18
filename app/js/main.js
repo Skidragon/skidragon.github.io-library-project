@@ -1,34 +1,29 @@
-    const TileBtn = {
 
-        //This button delete the whole tile and its children
-        createTrash: function (deleteTarget) {
-            const trashBtn = document.createElement('button');
-            const trashBtnClasses = ['btn','book-tile__btn-delete'];
-            trashBtn.classList.add(...trashBtnClasses);
-            trashBtn.addEventListener('click', function () {
-                deleteTarget.remove();
-            });
+function Book (title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead; 
+}
 
-            const trashIcon = document.createElement('i');
+Book.prototype = {
+    getInfo: function() {
+        return `${this.title} is created by ${this.author} which has ${this.pages} pages.`;
+    }
+}
 
-            const trashIconClasses = ['far','fa-trash-alt'];
+const addForm = document.querySelector('.add-form');
+const body = document.querySelector('body');
             
-            trashIcon.classList.add(...trashIconClasses);
-
-            trashBtn.appendChild(trashIcon);
-
-            return trashBtn;
-        },
-
-
-        //Tells the user whether the book has been read or not
-        createRead: function () {
-
-            const readBtn = document.createElement('button');
-            const readClasses = ['btn','book-tile__btn-read', 'btn--danger'];
-            readBtn.classList.add(...readClasses);
-            readBtn.textContent = `Didn't Read`;
-            readBtn.addEventListener('click', function () {
+//Form information getters
+const titleBox = document.querySelector('#add-title-info');
+const authorBox = document.querySelector('#add-author-info');
+const pagesBox = document.querySelector('#add-pages-info');
+const readBtns = documen.querySelector('.js-read-me');
+//Form Buttons
+const addBtn = document.querySelector('.js-btn-add');
+const submitBtn = document.querySelector('.js-btn-submit');
+const cancelBtn = document.querySelector('.js-btn-cancel');
 
                 if (this.getAttribute('class').indexOf('btn--danger') != -1) {
                     readBtn.textContent = `Read`;
