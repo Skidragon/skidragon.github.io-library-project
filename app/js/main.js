@@ -40,24 +40,36 @@ function addTile() {
 
     tile.classList.add(...tileClasses);
 
+    const book = new Book(titleBox.value, authorBox.value, pagesBox.value, false);
+
+    const bookText = document.createElement('p');
+    const bookTextClasses = ['book-tile__info'];
+    bookText.classList.add(...bookTextClasses);
+    bookText.textContent = book.getInfo();
+
+
     const btnContainer = document.createElement('div');
     btnContainer.classList.add('book-tile__btn-container');
 
     grid.appendChild(tile);
+    tile.appendChild(bookText);
     tile.appendChild(btnContainer)
 
     
-
+    //createTrash arguments deletes the target
     const trashBtn = TileBtn.createTrash(tile);
-    const readBtn = TileBtn.createRead();
+
+    //Shows whether or not the book has been read
+    const readBtn = TileBtn.createRead(book.isRead);
+
+    //This btn lets the user modify the text content in the tile
     const editBtn = TileBtn.createEdit();
 
     btnContainer.appendChild(trashBtn);
     btnContainer.appendChild(readBtn);
     btnContainer.appendChild(editBtn);
+    resetForm();
 }
-const addForm = document.querySelector('.add-form');
-const addBtn = document.querySelector('.js-add-btn');
 
 addBtn.addEventListener('click', function() {
     addForm.style.display = 'flex';
