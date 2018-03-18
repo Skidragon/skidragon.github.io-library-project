@@ -44,12 +44,23 @@
 
         <label>Have you read me?</label>
         <div class="add-form__circles-contanier">
-            <input type="button" class="btn add-form__btn--circle btn--circle btn--success-highlight" id = "js-read-me-yes" value="Yes" data-state="inactive">
-            <input type="button" class="btn add-form__btn--circle btn--circle btn--danger-highlight" id = "js-read-me-no" value="No" data-state="inactive">
+            <input type="button" class="btn add-form__btn--circle btn--circle btn--success-highlight" id="js-read-me-yes" value="Yes"
+                data-state="inactive">
+            <input type="button" class="btn add-form__btn--circle btn--circle btn--danger-highlight" id="js-read-me-no" value="No" data-state="inactive">
         </div>
         <div class="add-form__btn-container">
             <button class="btn--success add-form__btn-submit js-btn-submit">Submit</button>
             <button class="btn--danger add-form__btn-cancel js-btn-cancel">Cancel</button>
+        </div>
+
+        <div class="delete-prompt">
+            <p class="delete-prompt__warning">Are you sure that you want to delete
+                <h2 class="delete-prompt__book-title"></h2>
+            </p>
+            <div class="delete-prompt__btn-container">
+                <input type="delete-prompt__btn-yes" value="YES">
+                <input type="delete-prompt__btn-no" value="NO">
+            </div>
         </div>
 
         <script src="js/form-components.js"></script>
