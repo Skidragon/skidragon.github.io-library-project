@@ -1,51 +1,51 @@
+//Global Variables
+const addForm = document.querySelector('.add-form');
+const body = document.querySelector('body');
 
-function Book (title, author, pages, isRead) {
+function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.isRead = isRead; 
+    this.isRead = isRead;
 }
 
 Book.prototype = {
-    getInfo: function() {
+    getInfo: function () {
         return `${this.title} is created by ${this.author} which has ${this.pages} pages.`;
     }
 }
 
-const addForm = document.querySelector('.add-form');
-const body = document.querySelector('body');
-            
-//Form information getters
-const titleBox = document.querySelector('#add-title-info');
-const authorBox = document.querySelector('#add-author-info');
-const pagesBox = document.querySelector('#add-pages-info');
-const readBtns = documen.querySelector('.js-read-me');
+
+
+
 //Form Buttons
-const addBtn = document.querySelector('.js-btn-add');
-const submitBtn = document.querySelector('.js-btn-submit');
-const cancelBtn = document.querySelector('.js-btn-cancel');
+const addFormBtns = {
+    addBtn: document.querySelector('.js-btn-add'),
+    submitBtn: document.querySelector('.js-btn-submit'),
+    cancelBtn: document.querySelector('.js-btn-cancel'),
+}
 
 function resetForm() {
-    titleBox.value = '';
-    authorBox.value = '';
-    pagesBox.value = '';
-            
-        }
-function addTile() {
+
+}
+
+function addBookToLibrary() {
     const grid = document.querySelector('.books__grid');
-    
-    const tile = document.createElement('div');
-    const tileClasses = ['book-tile'];
-    tile.classList.add(...tileClasses);
 
-    const book = new Book(titleBox.value, authorBox.value, pagesBox.value, false);
+    const tile = Tile.createTile();
 
+    //Gets the book information from form and adds it to book tile
+    const titleInfo = addFormInputs.titleBox.value;
+    const authorInfo = addFormInputs.authorBox.value;
+    const pagesInfo = addFormInputs.pagesBox.value;
+
+    const book = new Book(titleInfo, authorInfo, pagesInfo, false);
     const bookText = document.createElement('p');
     const bookTextClasses = ['book-tile__info'];
     bookText.classList.add(...bookTextClasses);
     bookText.textContent = book.getInfo();
 
-
+    //Holds the buttons on the bottom of the tile
     const btnContainer = document.createElement('div');
     btnContainer.classList.add('book-tile__btn-container');
 
@@ -53,8 +53,8 @@ function addTile() {
     tile.appendChild(bookText);
     tile.appendChild(btnContainer)
 
-    
-    //createTrash arguments deletes the target
+
+    //createTrash argument deletes the target
     const trashBtn = TileBtn.createTrash(tile);
 
     //Shows whether or not the book has been read
@@ -69,29 +69,22 @@ function addTile() {
     resetForm();
 }
 
-addBtn.addEventListener('click', function() {
-    addForm.style.display = 'flex';
-    body.style.overflow = 'hidden';
-});
+function init() {
+    addFormBtns.addBtn.addEventListener('click', function () {
+        addForm.style.display = 'flex';
+        body.style.overflow = 'hidden';
+    });
 
-submitBtn.addEventListener('click', function() {
-    addForm.style.display = 'none';
-    body.style.overflow = 'scroll';        
-    addTile()
-});
+    addFormBtns.submitBtn.addEventListener('click', function () {
+        addForm.style.display = 'none';
+        body.style.overflow = 'scroll';
+        addBookToLibrary()
+    });
 
-cancelBtn.addEventListener('click', function() {
-    addForm.style.display = 'none';
-    body.style.overflow = 'scroll';    
-});
-submitBtn.addEventListener('click', function() {
-    addForm.style.display = 'none';
-    body.style.overflow = 'scroll';        
-    addTile()
-});
+    addFormBtns.cancelBtn.addEventListener('click', function () {
+        addForm.style.display = 'none';
+        body.style.overflow = 'scroll';
+    });
+}
 
-cancelBtn.addEventListener('click', function() {
-    addForm.style.display = 'none';
-    body.style.overflow = 'scroll';    
-});
-
+init();

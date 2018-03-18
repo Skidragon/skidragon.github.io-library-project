@@ -1,3 +1,13 @@
+const Tile = {
+    createTile: function() {
+        const tile = document.createElement('div');
+        const tileClasses = ['book-tile'];
+        tile.classList.add(...tileClasses);
+        return tile;
+    }
+};
+
+
 const TileBtn = {
 
     //This button delete the whole tile and its children in this program.
@@ -64,3 +74,4 @@ const TileBtn = {
         
     }
 }
+
