@@ -1,1 +1,65 @@
 @import 'base';
+.main-header {
+    .btn--primary {
+        @include border-radius;
+        @include remove-borders;
+        padding: .5rem;
+        width: 6rem;
+        font-weight: bold;
+        color: $white-color;
+        background: $primary-color;
+    }
+}
+    .book-tile {
+        &__btn-delete {
+            @include transparent-bg;
+            font-size: 2rem;
+        }
+    }
+
+.add-form {
+
+    &__btn-submit {
+        @include remove-borders;
+        cursor: pointer;
+    }
+    &__btn-cancel {
+        @include remove-borders;
+        cursor: pointer;
+    }
+}
+
+//===================
+//GENERAL COMPONENTS
+//===================
+
+    .btn--primary {
+        font-weight: bold;
+        color: $white-color;
+        background: $primary-color;
+    }
+    .btn--success {
+        font-weight: bold;
+        color: $white-color;
+        background: $success-color;
+    }
+    .btn--danger {
+        font-weight: bold;
+        color: $white-color;
+        background: $danger-color;
+    }
+
+    .btn {
+        color: $white-color;
+        @include border-radius;
+        @include remove-borders;
+        cursor: pointer;
+        padding: .5rem;
+    }
+
+    .btn--circle {
+        @include border-radius(50%);
+        @include remove-borders;
+        min-width: 4rem;
+        min-height: 4rem;
+    }

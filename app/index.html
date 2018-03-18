@@ -17,20 +17,44 @@
 <body>
     <header class="main-header">
         <h1 class="main-header__title">Library</h1>
-        <button class="btn btn--primary">Add Book</button>
+        <button class="btn btn--primary main-header__btn js-btn-add">Add Book</button>
     </header>
     <section class="books">
-        <h2 class="books-section__title"></h2>
+        <h2 class="books-section__title">Books</h2>
         <div class="books__grid">
-            <div class="book-tile">
-                <p class="book-tile__info"></p>
-                <button class = "book-tile__btn-delete"><i class="far fa-trash-alt"></i></button>
-                <button class ="book-tile__btn-read btn--danger">Didn't Read</button>
-                <button class ="book-tile__btn-edit btn--primary">Edit Book</button>
-            </div>
+
         </div>
     </section>
-    <script src="main.js"></script>
+
+    <div class="add-form">
+
+        <h2 class="add-form__title">Add Book</h2>
+
+        <!-- Add Title -->
+        <label for="add-title-info">Title</label>
+        <input type="text" placeholder="Add Book Title" id="add-title-info">
+
+        <!-- Add Author -->
+        <label for="add-author-info">Author</label>
+        <input type="text" placeholder="Add Author" id="add-author-info">
+
+        <!-- Number of Pages? -->
+        <label for="add-pages-info">Number of Pages?</label>
+        <input type="number" id="add-pages-info">
+
+        <label>Have you read me?</label>
+        <div class="add-form__circles-contanier">
+            <input type="button" class="js-read-me btn--circle" value="Yes">
+            <input type="button" class="js-read-me btn--circle" value="No">
+        </div>
+        <div class="add-form__btn-container">
+            <button class="btn--success add-form__btn-submit js-btn-submit">Submit</button>
+            <button class="btn--danger add-form__btn-cancel js-btn-cancel">Cancel</button>
+        </div>
+
+        <script src="js/form-components.js"></script>
+        <script src="js/tile-components.js"></script>
+        <script src="js/main.js"></script>
 </body>
 
 </html>
